@@ -1,0 +1,7 @@
+library(readr)
+library(caret)
+library(ggbiplot)
+library(ggplot2)
+library(dplyr)
+library(rgl)
+data_train <- read_csv("train.csv")
