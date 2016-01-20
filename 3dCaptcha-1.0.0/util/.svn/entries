@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="456"
+   name=""
+   committed-date="2006-05-25T00:40:36.527642Z"
+   url="svn://172.30.40.15/public/dot/web-public/utils/captcha-util"
+   last-author="marc"
+   kind="dir"
+   uuid="e0df6259-7e0e-0410-baa1-c81cc69b303a"
+   repos="svn://172.30.40.15"
+   revision="15680"/>
+<entry
+   committed-rev="456"
+   name="markovmodel.perl"
+   text-time="2007-07-26T19:00:09.000000Z"
+   committed-date="2006-05-25T00:40:36.527642Z"
+   checksum="4dcb8922cc3d87213f1cf43293418733"
+   last-author="marc"
+   kind="file"
+   prop-time="2007-07-26T19:00:05.000000Z"/>
+<entry
+   committed-rev="456"
+   name="8dgry10.txt"
+   text-time="2007-07-26T19:00:09.000000Z"
+   committed-date="2006-05-25T00:40:36.527642Z"
+   checksum="94de901601309c2f4ec6824626fce5cf"
+   last-author="marc"
+   kind="file"
+   prop-time="2007-07-26T19:00:09.000000Z"/>
+</wc-entries>

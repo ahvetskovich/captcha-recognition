@@ -1,1 +1,3 @@
 /kcaptcha/captchas/unpacked/*
+/ajax_captcha/captchas*
+/ajax_captcha/parts*

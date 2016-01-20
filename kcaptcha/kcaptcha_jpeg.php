@@ -262,9 +262,9 @@ class KCAPTCHA{
 	}
 }
 
-$numberOfCaptcha = 10000;
+$countOfCaptcha = 10000;
 $outputFile = "E:/GitHub/captcha-recognition/kcaptcha/data.txt";
-for($i=0;$i<$numberOfCaptcha;$i++){
+for($i=0;$i<$countOfCaptcha;$i++){
  $captcha = new KCAPTCHA();
 }
 
