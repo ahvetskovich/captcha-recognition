@@ -3,10 +3,10 @@ import numpy as np
 
 from segmentation.noiseFilter import noiseFilter
 
-img = cv2.imread('pics/2a5qg.jpg')
+img = cv2.imread('../pics/QuickCaptcha 1.0.png')
 # gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 gray = noiseFilter(img)
-ret, thresh = cv2.threshold(gray.copy(),0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)  #
+ret, thresh = cv2.threshold(gray.copy(),0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)  #
 
 # noise removal
 kernel = np.ones((3,3),np.uint8)

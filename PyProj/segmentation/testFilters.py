@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 from segmentation.noiseFilter import noiseFilter
 
 n = 11
-img = cv2.imread('pics/27j7mh.jpg')
+img = cv2.imread('../pics/QuickCaptcha 1.0.png')
 bilateralFilter = cv2.bilateralFilter(img,1,500,500) #9,75,75)
 denoise = cv2.fastNlMeansDenoisingColored(img,None,15,15,7,21)
 median = cv2.medianBlur(img, 3)
@@ -46,7 +46,7 @@ plt.subplot(n,1,11),plt.imshow(blur)
 plt.title('blur Image'), plt.xticks([]), plt.yticks([])
 
 
-# plt.show()
+plt.show()
 
 # noiseFilter(img)
 noiseFilter(bilateralFilter)

@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 # opencv 2.41 - python 2.73
 
-filename = "pics/balls.png" #http://3.bp.blogspot.com/-1UtLXb7c73U/T9QZT3tpVjI/AAAAAAAAATE/Nyo7SFg8T1o/s200/balls.png
+filename = "../pics/QuickCaptcha 1.0.png" #http://3.bp.blogspot.com/-1UtLXb7c73U/T9QZT3tpVjI/AAAAAAAAATE/Nyo7SFg8T1o/s200/balls.png
 im = cv2.imread(filename)
 new = im.copy()
 

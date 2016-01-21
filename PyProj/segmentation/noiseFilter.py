@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 def noiseFilter(img):
     # Load an color image in grayscale
-    imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # , dstCn=3
 
     # global thresholding
     threshold = int(108)
