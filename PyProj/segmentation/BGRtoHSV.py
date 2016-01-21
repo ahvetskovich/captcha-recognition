@@ -6,7 +6,7 @@ def nothing(x):
     pass
 
 
-img = cv2.imread('pics/ajax captcha/Test-p6qq82-300x90.jpg')
+img = cv2.imread('../pics/ajax captcha/Test-p6qq82-300x90.jpg')
 clearImage = cv2.imread('pics/2b6vm9.jpg')
 
 # cv2.namedWindow('clearImage', cv2.WINDOW_NORMAL)
