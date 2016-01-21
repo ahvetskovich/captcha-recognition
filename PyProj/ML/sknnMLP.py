@@ -19,8 +19,8 @@ def getPathValueList(dirPath, extension):
             count += 1
 
     return pathValue
-cv2.ml.ANN_MLP_create()
-inputDir = 'E:/GitHub/captcha-recognition/ajax_captcha/test_parts/'
+
+inputDir = '/home/andy/Github/captcha-recognition/ajax_captcha/parts_21-01-2016 02.28/'  # '/home/andy/Github/captcha-recognition/ajax_captcha/test_parts/'
 pathValueList = getPathValueList(inputDir, '.jpg')
 n_samples = len(pathValueList)
 threshold = int(.5 * n_samples)
@@ -31,22 +31,31 @@ images, labels = zip(*imagesAndLabels)
 
 data = np.array(images).reshape((n_samples, -1))
 
+log = logging.getLogger('sknn')
+
+inputNeurons = data.shape[1]
+outputNeurons = len(set(labels))
+hiddenNeurons = int((inputNeurons + outputNeurons) * 2 / 3)
+
 nn = Classifier(
     layers=[
-        Layer("Maxout", units=100, pieces=2),
+        Layer("Sigmoid", units=hiddenNeurons),
         Layer("Softmax")],
     learning_rate=0.001,
-    n_iter=25)
+    n_iter=10,
+    verbose=True)
 
 n_samples = len(images)
 threshold = int(.9 * n_samples)
 
 X_train = data[:threshold]
-y_train = labels[:threshold]
+y_train = np.array(labels[:threshold])
 X_test = data[threshold:]
-y_test = labels[threshold:]
+y_test = np.array(labels[threshold:])
 
 nn.fit(X_train, y_train)
 
 
 score = nn.score(X_test, y_test)
+
+print(score)

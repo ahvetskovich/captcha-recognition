@@ -97,9 +97,9 @@ def deleteSmallRects(boundingRects, threshold):
 
 if __name__=="__main__":
     date = datetime.datetime.now().strftime("%d-%m-%Y %H.%M")
-    inputDir = 'E:/GitHub/captcha-recognition/ajax_captcha/captchas_q=100/'
-    outputDir = 'E:/GitHub/captcha-recognition/ajax_captcha/parts_%s/' % date
-    logPath = 'E:/GitHub/captcha-recognition/ajax_captcha/logs/log_partition_%s.txt' % date
+    inputDir = '/home/andy/Github/captcha-recognition/ajax_captcha/captchas_q=100/'
+    outputDir = '/home/andy/Github/captcha-recognition/ajax_captcha/parts_%s/' % date
+    logPath = '/home/andy/Github/captcha-recognition/ajax_captcha/logs/log_partition_%s.txt' % date
     logging.basicConfig(filename=logPath, level=logging.DEBUG)
 
     if not os.path.exists(inputDir):
@@ -169,8 +169,8 @@ if __name__=="__main__":
             rectPixels = res[y:y+h, x:x+w]
             resizedRect = resizeImage(rectPixels, xResizeVal, yResizeVal)
             filePath = ''.join([outputDir, captchaCode[rectIdx], "_", captchaCode, "_", str(rectIdx), ".jpg"])
-            partsList.append((resizedRect, captchaCode[rectIdx]))
-            # cv2.imwrite(filePath, resizedRect, [cv2.IMWRITE_JPEG_QUALITY, 100])
+            # partsList.append((resizedRect, captchaCode[rectIdx]))
+            cv2.imwrite(filePath, resizedRect, [cv2.IMWRITE_JPEG_QUALITY, 100])
 
         print('%d/%d', pairIdx, len(pathValueList))
 

@@ -6,6 +6,7 @@ def nothing(x):
     pass
 
 
+
 img = cv2.imread('../pics/QuickCaptcha2 1.0.png')
 clearImage = cv2.imread('pics/2b6vm9.jpg')
 
