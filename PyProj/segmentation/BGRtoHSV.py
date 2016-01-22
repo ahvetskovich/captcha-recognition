@@ -7,7 +7,7 @@ def nothing(x):
 
 
 
-img = cv2.imread('../pics/QuickCaptcha2 1.0.png')
+img = cv2.imread('../pics/securimage2.png')
 clearImage = cv2.imread('pics/2b6vm9.jpg')
 
 # cv2.namedWindow('clearImage', cv2.WINDOW_NORMAL)
@@ -32,7 +32,7 @@ cv2.setTrackbarPos('Hmax', 'image', 255)
 cv2.setTrackbarPos('Smin', 'image', 0)
 cv2.setTrackbarPos('Smax', 'image', 255)
 cv2.setTrackbarPos('Vmin', 'image', 0)
-cv2.setTrackbarPos('Vmax', 'image', 121)
+cv2.setTrackbarPos('Vmax', 'image', 139)
 
 while (1):
 
@@ -48,7 +48,7 @@ while (1):
     upper = np.array([hMax, sMax, vMax], np.uint8)
 
     mask = cv2.inRange(img, lower, upper)
-    output = cv2.bitwise_and(img, img, mask = mask)
+    output = cv2.bitwise_not(img, img, mask = mask)
 
     cv2.imshow('image', output)
 

@@ -8,14 +8,14 @@ def noiseFilter(img):
     imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # , dstCn=3
 
     # global thresholding
-    threshold = int(108)
+    threshold = int(139)
     ret1, th1 = cv2.threshold(imgGray, threshold, 255, cv2.THRESH_BINARY)
 
     # Otsu's thresholding
     ret2, th2 = cv2.threshold(imgGray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
     # Otsu's thresholding after Gaussian filtering
-    blur = cv2.GaussianBlur(imgGray, (3, 3), 0)
+    blur = cv2.GaussianBlur(imgGray, (5, 5), 0)
     ret3, th3 = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
     # plot all the images and their histograms
