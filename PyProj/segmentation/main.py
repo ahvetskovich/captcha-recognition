@@ -2,7 +2,7 @@ import cv2
 
 from segmentation.noiseFilter import noiseFilter
 
-img = cv2.imread('pics/ajax captcha/2wwgby.jpg')
+img = cv2.imread('../pics/securimage2.png')
 res = noiseFilter(img);
 # res = getContoursRects(img);
 
