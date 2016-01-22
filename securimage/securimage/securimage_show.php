@@ -71,9 +71,11 @@ $img = new Securimage();
 // see securimage.php for more options that can be set
 
 // set namespace if supplied to script via HTTP GET
-//if (!empty($_GET['namespace'])) $img->setNamespace($_GET['namespace']);
+if (!empty($_GET['namespace'])) $img->setNamespace($_GET['namespace']);
 
-
-$img->show();  // outputs the image and content headers to the browser
+$numberToGenerate = 10000;
+for($i=0;$i<$numberToGenerate;$i++) {
+    $img->show();  // outputs the image and content headers to the browser
+}
 // alternate use:
 // $img->show('/path/to/background_image.jpg');

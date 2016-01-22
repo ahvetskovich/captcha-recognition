@@ -271,7 +271,8 @@ class Securimage
 
     /*%*********************************************************************%*/
     // Properties
-
+    public $fullPath = '';
+    public $outputPath = '/home/andy/Github/captcha-recognition/securimage/captchas_A-Z2-9/';
     /**
      * The width of the captcha image
      * @var int
@@ -368,7 +369,7 @@ class Securimage
      * The character set to use for generating the captcha code
      * @var string
      */
-    public $charset        = 'ABCDEFGHKLMNPRSTUVWYZabcdefghklmnprstuvwyz23456789';
+    public $charset        = 'ABCDEFGHKLMNPRSTUVWYZ23456789'; //'ABCDEFGHKLMNPRSTUVWYZabcdefghklmnprstuvwyz23456789'
 
     /**
      * How long in seconds a captcha remains valid, after this time it will be
@@ -1621,13 +1622,13 @@ class Securimage
      */
     protected function doImage()
     {
-        if( ($this->use_transparent_text == true || $this->bgimg != '') && function_exists('imagecreatetruecolor')) {
+        if (($this->use_transparent_text == true || $this->bgimg != '') && function_exists('imagecreatetruecolor')) {
             $imagecreate = 'imagecreatetruecolor';
         } else {
             $imagecreate = 'imagecreate';
         }
 
-        $this->im     = $imagecreate($this->image_width, $this->image_height);
+        $this->im = $imagecreate($this->image_width, $this->image_height);
         $this->tmpimg = $imagecreate($this->image_width * $this->iscale, $this->image_height * $this->iscale);
 
         $this->allocateColors();
@@ -1643,9 +1644,9 @@ class Securimage
             // check to see if a display_value for the captcha image was set
             if (is_string($this->display_value) && strlen($this->display_value) > 0) {
                 $this->code_display = $this->display_value;
-                $this->code         = ($this->case_sensitive) ?
-                                       $this->display_value   :
-                                       strtolower($this->display_value);
+                $this->code = ($this->case_sensitive) ?
+                    $this->display_value :
+                    strtolower($this->display_value);
                 $code = $this->code;
             } else if ($this->openDatabase()) {
                 // no display_value, check the database for existing captchaId
@@ -1653,7 +1654,7 @@ class Securimage
 
                 // got back a result from the database with a valid code for captchaId
                 if (is_array($code)) {
-                    $this->code         = $code['code'];
+                    $this->code = $code['code'];
                     $this->code_display = $code['code_disp'];
                     $code = $code['code'];
                 }
@@ -1663,7 +1664,10 @@ class Securimage
         if ($code == '') {
             // if the code was not set using display_value or was not found in
             // the database, create a new code
-            $this->createCode();
+            do {
+                $this->createCode();
+                $this->fullPath = $this->outputPath . $this->code . '.png';
+            } while(file_exists($this->fullPath));
         }
 
         if ($this->noise_level > 0) {
@@ -2075,7 +2079,7 @@ class Securimage
                     break;
                 default:
                     if ($this->send_headers) header("Content-Type: image/png");
-                    imagepng($this->im);
+                    imagepng($this->im, $this->fullPath);
                     break;
             }
         } else {
@@ -2088,7 +2092,7 @@ class Securimage
         imagedestroy($this->im);
         restore_error_handler();
 
-        if (!$this->no_exit) exit;
+//        if (!$this->no_exit) exit;
     }
 
     /**
