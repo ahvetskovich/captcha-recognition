@@ -6,7 +6,7 @@ import os
 import random
 import cv2
 import numpy as np
-
+from sklearn import preprocessing
 def getPathValueList(dirPath, extension):
     pathValue = []
     count = 0
@@ -27,6 +27,7 @@ threshold = int(.5 * n_samples)
 imagesAndLabels = [(cv2.imread(path,0), value.split('_', 1)[0]) for (path, value) in pathValueList]
 random.shuffle(imagesAndLabels)
 images, labels = zip(*imagesAndLabels)
+
 
 data = np.array(images).reshape((n_samples, -1))
 

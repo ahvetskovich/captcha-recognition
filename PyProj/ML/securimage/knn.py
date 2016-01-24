@@ -29,17 +29,17 @@ n_samples = len(images)
 threshold = int(.7 * n_samples)
 data = np.array(images).reshape((n_samples, -1))
 
-X_train = data[:threshold]
+x_train = data[:threshold]
 y_train = labels[:threshold]
-X_test = data[threshold:]
+x_test = data[threshold:]
 y_test = labels[threshold:]
 
-knn = neighbors.KNeighborsClassifier(n_neighbors = 10, weights='uniform')
+knn = neighbors.KNeighborsClassifier(n_neighbors = 5)
 
-knn.fit(data[:threshold], labels[:threshold])
+knn.fit(x_train, y_train)
 
-expected = labels[threshold:]
-predicted = knn.predict(data[threshold:])
+expected = y_test
+predicted = knn.predict(x_test)
 
 print("Classification report for classifier %s:\n%s\n"
       % (knn, metrics.classification_report(expected, predicted, digits=4)))

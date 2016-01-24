@@ -12,7 +12,7 @@ def getPathValueList(dirPath, extension):
     pathValue = []
     count = 0
     for file in os.listdir(dirPath):
-        if(count == 30000):
+        if(count == 3000):
             return pathValue
         if file.endswith(extension):
             pathValue.append((''.join([dirPath,file]), os.path.splitext(file)[0]))
@@ -43,7 +43,7 @@ images, labels = zip(*imagesAndLabels)
 
 data = np.array(images).reshape((n_samples, -1))
 
-classifier = svm.SVC(kernel = "poly", degree = 3)  #gamma=0.001,
+classifier = svm.SVC(kernel = "linear", degree = 3)  #gamma=0.001,
 classifier.fit(data[:threshold], labels[:threshold])
 
 expected = labels[threshold:]

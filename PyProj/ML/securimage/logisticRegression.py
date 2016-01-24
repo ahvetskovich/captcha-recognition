@@ -29,19 +29,16 @@ n_samples = len(images)
 threshold = int(.7 * n_samples)
 data = np.array(images).reshape((n_samples, -1))
 
-X_train = data[:threshold]
+x_train = data[:threshold]
 y_train = labels[:threshold]
-X_test = data[threshold:]
+x_test = data[threshold:]
 y_test = labels[threshold:]
 
-knn = neighbors.KNeighborsClassifier(n_neighbors = 10, weights='uniform')
-
-knn.fit(data[:threshold], labels[:threshold])
-
-expected = labels[threshold:]
-predicted = knn.predict(data[threshold:])
-
 logistic = linear_model.LogisticRegression()
+logistic.fit(x_train, y_train)
+
+expected = y_test
+predicted = logistic.predict(x_test)
 
 print("Classification report for classifier %s:\n%s\n"
       % (logistic, metrics.classification_report(expected, predicted, digits=4)))

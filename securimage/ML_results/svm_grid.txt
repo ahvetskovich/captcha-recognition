@@ -1,0 +1,213 @@
+/usr/bin/python3.4 /home/andy/Github/captcha-recognition/PyProj/ML/securimage/gridSearchSVM.py
+# Tuning hyper-parameters for precision
+
+Best parameters set found on development set:
+
+{'kernel': 'poly', 'C': 1, 'gamma': 'auto', 'degree': 2}
+
+Grid scores on development set:
+
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.01, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.0001, 'degree': 2}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 'auto', 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.01, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.001, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.0001, 'degree': 3}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.01, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.0001, 'degree': 2}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 'auto', 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.01, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.001, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.0001, 'degree': 3}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.01, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.0001, 'degree': 2}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 'auto', 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.01, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.001, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.0001, 'degree': 3}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.01, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.0001, 'degree': 2}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 'auto', 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.01, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.001, 'degree': 3}
+0.957 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.0001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.0001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 'auto', 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.0001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.0001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 'auto', 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.0001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.0001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 'auto', 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.0001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 'auto', 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.0001, 'degree': 2}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 'auto', 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.001, 'degree': 3}
+0.958 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.0001, 'degree': 3}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          2       0.97      0.97      0.97        34
+          3       0.97      0.97      0.97        33
+          4       0.97      1.00      0.99        34
+          5       0.97      1.00      0.98        29
+          6       1.00      0.88      0.93        24
+          7       0.95      1.00      0.97        35
+          8       0.91      0.87      0.89        23
+          9       0.83      0.94      0.88        31
+          a       0.93      1.00      0.96        26
+          b       1.00      0.85      0.92        34
+          c       0.94      1.00      0.97        31
+          d       0.97      0.97      0.97        31
+          e       0.97      1.00      0.98        31
+          f       0.94      0.97      0.96        33
+          g       1.00      0.96      0.98        26
+          h       0.95      0.95      0.95        40
+          k       0.93      0.93      0.93        28
+          l       1.00      1.00      1.00        34
+          m       1.00      0.93      0.96        40
+          n       0.96      0.93      0.95        29
+          p       0.97      0.97      0.97        34
+          r       0.96      0.96      0.96        25
+          s       0.89      0.89      0.89        35
+          t       0.94      0.97      0.95        30
+          u       1.00      1.00      1.00        29
+          v       1.00      0.97      0.98        30
+          w       0.97      1.00      0.98        31
+          y       0.96      1.00      0.98        25
+          z       1.00      0.94      0.97        35
+
+avg / total       0.96      0.96      0.96       900
+
+
+# Tuning hyper-parameters for recall
+
+Best parameters set found on development set:
+
+{'kernel': 'poly', 'C': 1, 'gamma': 'auto', 'degree': 2}
+
+Grid scores on development set:
+
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1, 'gamma': 0.01, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1, 'gamma': 0.0001, 'degree': 2}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 'auto', 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.01, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.001, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1, 'gamma': 0.0001, 'degree': 3}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 10, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 10, 'gamma': 0.01, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 10, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 10, 'gamma': 0.0001, 'degree': 2}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 'auto', 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.01, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.001, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 10, 'gamma': 0.0001, 'degree': 3}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 100, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 100, 'gamma': 0.01, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 100, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 100, 'gamma': 0.0001, 'degree': 2}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 'auto', 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.01, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.001, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 100, 'gamma': 0.0001, 'degree': 3}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1000, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.01, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.007) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.0001, 'degree': 2}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 'auto', 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.01, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.001, 'degree': 3}
+0.955 (+/-0.006) for {'kernel': 'poly', 'C': 1000, 'gamma': 0.0001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.0001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 'auto', 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1, 'gamma': 0.0001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.0001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 'auto', 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 10, 'gamma': 0.0001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.0001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 'auto', 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 100, 'gamma': 0.0001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 'auto', 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.0001, 'degree': 2}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 'auto', 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.001, 'degree': 3}
+0.956 (+/-0.004) for {'kernel': 'linear', 'C': 1000, 'gamma': 0.0001, 'degree': 3}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          2       0.97      0.97      0.97        34
+          3       0.97      0.97      0.97        33
+          4       0.97      1.00      0.99        34
+          5       0.97      1.00      0.98        29
+          6       1.00      0.88      0.93        24
+          7       0.95      1.00      0.97        35
+          8       0.91      0.87      0.89        23
+          9       0.83      0.94      0.88        31
+          a       0.93      1.00      0.96        26
+          b       1.00      0.85      0.92        34
+          c       0.94      1.00      0.97        31
+          d       0.97      0.97      0.97        31
+          e       0.97      1.00      0.98        31
+          f       0.94      0.97      0.96        33
+          g       1.00      0.96      0.98        26
+          h       0.95      0.95      0.95        40
+          k       0.93      0.93      0.93        28
+          l       1.00      1.00      1.00        34
+          m       1.00      0.93      0.96        40
+          n       0.96      0.93      0.95        29
+          p       0.97      0.97      0.97        34
+          r       0.96      0.96      0.96        25
+          s       0.89      0.89      0.89        35
+          t       0.94      0.97      0.95        30
+          u       1.00      1.00      1.00        29
+          v       1.00      0.97      0.98        30
+          w       0.97      1.00      0.98        31
+          y       0.96      1.00      0.98        25
+          z       1.00      0.94      0.97        35
+
+avg / total       0.96      0.96      0.96       900
+
+
+
+Process finished with exit code 0
