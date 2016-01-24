@@ -1,24 +1,5 @@
-"""
-================================
-Recognizing hand-written digits
-================================
-
-An example showing how the scikit-learn can be used to recognize images of
-hand-written digits.
-
-This example is commented in the
-:ref:`tutorial section of the user manual <introduction>`.
-
-"""
-print(__doc__)
-
-# Author: Gael Varoquaux <gael dot varoquaux at normalesup dot org>
-# License: BSD 3 clause
-
-# Standard scientific Python imports
 import matplotlib.pyplot as plt
 
-# Import datasets, classifiers and performance metrics
 from sklearn import datasets, svm, metrics
 import datetime
 import logging
@@ -27,12 +8,11 @@ import random
 import cv2
 import numpy as np
 
-# The digits dataset
 def getPathValueList(dirPath, extension):
     pathValue = []
     count = 0
     for file in os.listdir(dirPath):
-        if(count == 60000):
+        if(count == 30000):
             return pathValue
         if file.endswith(extension):
             pathValue.append((''.join([dirPath,file]), os.path.splitext(file)[0]))
@@ -40,10 +20,10 @@ def getPathValueList(dirPath, extension):
 
     return pathValue
 
-inputDir = 'E:/GitHub/captcha-recognition/ajax_captcha/test_parts/'
+inputDir = '/home/andy/Github/captcha-recognition/securimage/parts_24-01-2016 02.36/'
 pathValueList = getPathValueList(inputDir, '.jpg')
 n_samples = len(pathValueList)
-threshold = int(.5 * n_samples)
+threshold = int(.7 * n_samples)
 
 imagesAndLabels = [(cv2.imread(path,0), value.split('_', 1)[0]) for (path, value) in pathValueList]
 random.shuffle(imagesAndLabels)
@@ -63,18 +43,14 @@ images, labels = zip(*imagesAndLabels)
 
 data = np.array(images).reshape((n_samples, -1))
 
-# Create a classifier: a support vector classifier
-classifier = svm.SVC(kernel='linear')  #gamma=0.001,
-
-# We learn the digits on the first half of the digits
+classifier = svm.SVC(kernel = "poly", degree = 3)  #gamma=0.001,
 classifier.fit(data[:threshold], labels[:threshold])
 
-# Now predict the value of the digit on the second half:
 expected = labels[threshold:]
 predicted = classifier.predict(data[threshold:])
 
 print("Classification report for classifier %s:\n%s\n"
-      % (classifier, metrics.classification_report(expected, predicted)))
+      % (classifier, metrics.classification_report(expected, predicted, digits=4)))
 print("Confusion matrix:\n%s" % metrics.confusion_matrix(expected, predicted))
 
 # images_and_predictions = list(zip(images[threshold:], predicted))

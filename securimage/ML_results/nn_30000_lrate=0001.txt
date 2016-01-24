@@ -1,0 +1,38 @@
+/usr/bin/python3.4 /home/andy/Github/captcha-recognition/PyProj/ML/securimage/sknnMLP.py
+Initializing neural network with 2 layers, 1936 inputs and 29 outputs.
+  - Dense: Sigmoid    Units:  1310
+  - Dense: Softmax    Units:  29  
+
+Training on dataset of 21,000 samples with 41,265,000 total size.
+  - Terminating loop after 25 total iterations.
+  - Early termination after 10 stable iterations.
+
+Epoch       Training Error       Validation Error       Time
+------------------------------------------------------------
+    1          1.852e+00                 N/A          217.0s
+    2          1.003e+00                 N/A          221.7s
+    3          8.252e-01                 N/A          226.6s
+    4          7.280e-01                 N/A          227.4s
+    5          7.024e-01                 N/A          223.1s
+    6          6.740e-01                 N/A          223.3s
+    7          6.734e-01                 N/A          230.3s
+    8          6.893e-01                 N/A          231.1s
+    9          7.184e-01                 N/A          226.5s
+   10          6.326e-01                 N/A          217.7s
+   11          6.027e-01                 N/A          220.8s
+   12          5.514e-01                 N/A          218.4s
+   13          5.736e-01                 N/A          215.4s
+   14          5.934e-01                 N/A          217.3s
+   15          5.809e-01                 N/A          215.7s
+   16          6.019e-01                 N/A          216.4s
+   17          5.771e-01                 N/A          217.6s
+   18          6.086e-01                 N/A          216.8s
+   19          6.953e-01                 N/A          218.2s
+   20          6.168e-01                 N/A          214.6s
+   21          5.786e-01                 N/A          215.5s
+   22          5.867e-01                 N/A          215.5s
+
+Early termination condition fired at 22 iterations.
+0.902111111111
+
+Process finished with exit code 0
