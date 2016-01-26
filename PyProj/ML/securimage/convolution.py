@@ -33,21 +33,17 @@ data = np.array(images).reshape((n_samples, -1))
 
 log = logging.getLogger('sknn')
 
-inputNeurons = data.shape[1]
-outputNeurons = len(set(labels))
-hiddenNeurons = int((inputNeurons + outputNeurons) * 2 / 3)
-
 nn = Classifier(
     layers=[
-        Convolution("Rectifier", channels=8, kernel_shape=(3,3), border_mode='full', pool_shape=(2, 2)),
+        Convolution("Rectifier", channels=8, kernel_shape=(3,3), border_mode='full', pool_shape=(2, 2)),#
         Layer("Softmax")],
-    learning_rate=0.0000005,
+    learning_rate=3e-07,
     n_iter=100,
     n_stable=10,
-    learning_rule='momentum',
-    batch_size=1,
+    batch_size=10,
+    # learning_rule='momentum',
+    # weight_decay=0.0005,
     valid_size=0.1,
-    weight_decay=0.0005,
     dropout_rate=0.03,
     verbose=True)
 

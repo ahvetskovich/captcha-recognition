@@ -42,7 +42,7 @@ nn = Classifier(
         Layer("Sigmoid", units=hiddenNeurons),
         Layer("Softmax")],
     learning_rate=0.001,
-    n_iter=10,
+    n_iter=25,
     verbose=True)
 
 n_samples = len(images)

@@ -5,12 +5,13 @@ import os
 import random
 import cv2
 import numpy as np
+from sklearn import preprocessing
 
 def getPathValueList(dirPath, extension):
     pathValue = []
     count = 0
     for file in os.listdir(dirPath):
-        if(count == 5000):
+        if(count == 30000):
             return pathValue
         if file.endswith(extension):
             pathValue.append((''.join([dirPath,file]), os.path.splitext(file)[0]))
@@ -29,17 +30,37 @@ n_samples = len(images)
 threshold = int(.7 * n_samples)
 data = np.array(images).reshape((n_samples, -1))
 
+normalized_data = preprocessing.normalize(data)
+standardized_data = preprocessing.scale(data)
+
+x_train2 = normalized_data[:threshold]
+x_test2 = normalized_data[threshold:]
+
 x_train = data[:threshold]
 y_train = labels[:threshold]
 x_test = data[threshold:]
 y_test = labels[threshold:]
 
-knn = neighbors.KNeighborsClassifier(n_neighbors = 5)
+
+
+knn = neighbors.KNeighborsClassifier(n_neighbors = 5, weights='distance')
 
 knn.fit(x_train, y_train)
 
 expected = y_test
 predicted = knn.predict(x_test)
+
+print("Classification report for classifier %s:\n%s\n"
+      % (knn, metrics.classification_report(expected, predicted, digits=4)))
+print("Confusion matrix:\n%s" % metrics.confusion_matrix(expected, predicted))
+print('end')
+
+knn = neighbors.KNeighborsClassifier(n_neighbors = 5, weights='distance')
+
+knn.fit(x_train2, y_train)
+
+expected = y_test
+predicted = knn.predict(x_test2)
 
 print("Classification report for classifier %s:\n%s\n"
       % (knn, metrics.classification_report(expected, predicted, digits=4)))

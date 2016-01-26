@@ -12,7 +12,7 @@ def getPathValueList(dirPath, extension):
     pathValue = []
     count = 0
     for file in os.listdir(dirPath):
-        if(count == 3000):
+        if(count == 5000):
             return pathValue
         if file.endswith(extension):
             pathValue.append((''.join([dirPath,file]), os.path.splitext(file)[0]))
@@ -43,9 +43,13 @@ images, labels = zip(*imagesAndLabels)
 
 data = np.array(images).reshape((n_samples, -1))
 
-classifier = svm.SVC(kernel = "linear", degree = 3)  #gamma=0.001,
+# Create a classifier: a support vector classifier
+classifier = svm.SVC(kernel = "rbf", gamma=0.03)  #,degree = 2
+
+# We learn the digits on the first half of the digits
 classifier.fit(data[:threshold], labels[:threshold])
 
+# Now predict the value of the digit on the second half:
 expected = labels[threshold:]
 predicted = classifier.predict(data[threshold:])
 
